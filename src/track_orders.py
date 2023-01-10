@@ -70,19 +70,19 @@ class TrackOrders:
         return min(frequency, key=frequency.get)
 
 
-if __name__ == '__main__':
-    csv_parsed = [
-    ["maria", "pizza", "terça-feira"],
-    ["maria", "hamburguer", "terça-feira"],
-    ["joao", "hamburguer", "terça-feira"],
-    ["maria", "coxinha", "segunda-feira"],
-    ["arnaldo", "misto-quente", "terça-feira"],
-    ["jose", "hamburguer", "sabado"],
-    ["maria", "hamburguer", "terça-feira"],
-    ["maria", "hamburguer", "terça-feira"],
-    ["joao", "hamburguer", "terça-feira"],
-]
-    track_orders = TrackOrders()
-    for name, food, day in csv_parsed:
-        track_orders.add_new_order(name, food, day)
-    print(track_orders.get_busiest_day())
+# if __name__ == '__main__':
+#     csv_parsed = [
+#     ["maria", "pizza", "terça-feira"],
+#     ["maria", "hamburguer", "terça-feira"],
+#     ["joao", "hamburguer", "terça-feira"],
+#     ["maria", "coxinha", "segunda-feira"],
+#     ["arnaldo", "misto-quente", "terça-feira"],
+#     ["jose", "hamburguer", "sabado"],
+#     ["maria", "hamburguer", "terça-feira"],
+#     ["maria", "hamburguer", "terça-feira"],
+#     ["joao", "hamburguer", "terça-feira"],
+# ]
+#     track_orders = TrackOrders()
+#     for name, food, day in csv_parsed:
+#         track_orders.add_new_order(name, food, day)
+#     print(track_orders.get_busiest_day())
