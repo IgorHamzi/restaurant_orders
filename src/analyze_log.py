@@ -64,24 +64,24 @@ def how_many_dishes_did_joao_ever_order(path_to_file):
     return all_foods - foods_joao
 
 
-# def days_off_joao(path_to_file):
-#     requests = importer_csv(path_to_file)
-# 
-#     all_days = set()
-#     days_joao = set()
-# 
-#     for food in requests['joao']:
-#         for days in requests['joao'][food]:
-#             days_joao.add(days)
-# 
-#     for name in requests:
-#         for food in requests[name]:
-#             for days in requests[name][food]:
-#                 all_days.add(days)
-# 
-#     return all_days - days_joao
-# 
-# 
+def days_off_joao(path_to_file):
+    requests = importer_csv(path_to_file)
+
+    all_days = set()
+    days_joao = set()
+
+    for food in requests['joao']:
+        for days in requests['joao'][food]:
+            days_joao.add(days)
+
+    for name in requests:
+        for food in requests[name]:
+            for days in requests[name][food]:
+                all_days.add(days)
+
+    return all_days - days_joao
+
+
 # def analyze_log(path_to_file):
 #     a = most_requested_dish_by_maria(path_to_file)
 #     b = how_many_hamburgers_did_arnaldo_order(path_to_file)
