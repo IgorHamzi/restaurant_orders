@@ -59,7 +59,15 @@ class TrackOrders:
         return max(frequency, key=frequency.get)
 
     def get_least_busy_day(self):
-        pass
+        frequency = {}
+
+        for i in self.orders:
+            if i[2] not in frequency:
+                frequency[i[2]] = 1
+            else:
+                frequency[i[2]] += 1
+
+        return min(frequency, key=frequency.get)
 
 
 if __name__ == '__main__':
