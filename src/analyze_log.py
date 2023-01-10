@@ -91,16 +91,16 @@ def days_off_joao(path_to_file):
     return all_days(requests) - days_joao
 
 
-# def analyze_log(path_to_file):
-#     a = most_requested_dish_by_maria(path_to_file)
-#     b = how_many_hamburgers_did_arnaldo_order(path_to_file)
-#     c = how_many_dishes_did_joao_ever_order(path_to_file)
-#     d = days_off_joao(path_to_file)
-# 
-#     resposta = f'{a}\n{b}\n{c}\n{d}'
-#     with open('data/mkt_campaign.txt', 'w') as f:
-#         f.write(resposta)
-# 
-# 
-# if __name__ == '__main__':
-#     print(analyze_log('data/orders_1.csv'))
+def analyze_log(path_to_file):
+    a = most_requested_dish_by_maria(path_to_file)
+    b = how_many_hamburgers_did_arnaldo_order(path_to_file)
+    c = how_many_dishes_did_joao_ever_order(path_to_file)
+    d = days_off_joao(path_to_file)
+
+    resposta = f'{a}\n{b}\n{c}\n{d}'
+    with open('data/mkt_campaign.txt', 'w') as f:
+        f.write(resposta)
+
+
+if __name__ == '__main__':
+    print(analyze_log('data/orders_1.csv'))
