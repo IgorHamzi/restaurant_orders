@@ -29,14 +29,14 @@ def format_file(file):
     return requests
 
 
-def most_requested_dish_by_maria(path_to_file):
+def most_requested_dish_by_maria(path_to_file, costumer):
     requests = importer_csv(path_to_file)
 
     frequency = {}
 
-    for i in requests['maria'].keys():
-        for j in requests['maria'][i]:
-            frequency[i] = requests['maria'][i][j]
+    for i in requests[costumer].keys():
+        for j in requests[costumer][i]:
+            frequency[i] = requests[costumer][i][j]
 
     return max(frequency, key=frequency.get)
 
@@ -92,7 +92,7 @@ def days_off_joao(path_to_file):
 
 
 def analyze_log(path_to_file):
-    a = most_requested_dish_by_maria(path_to_file)
+    a = most_requested_dish_by_maria(path_to_file, 'maria')
     b = how_many_hamburgers_did_arnaldo_order(path_to_file)
     c = how_many_dishes_did_joao_ever_order(path_to_file)
     d = days_off_joao(path_to_file)
