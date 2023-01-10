@@ -68,34 +68,39 @@ def how_many_dishes_did_joao_ever_order(path_to_file):
     return all_foods - foods_joao
 
 
-def days_off_joao(path_to_file):
-    requests = importer_csv(path_to_file)
-
+def all_days(requests):
     all_days = set()
-    days_joao = set()
-
-    for food in requests['joao']:
-        for days in requests['joao'][food]:
-            days_joao.add(days)
 
     for name in requests:
         for food in requests[name]:
             for days in requests[name][food]:
                 all_days.add(days)
 
-    return all_days - days_joao
+    return all_days
 
 
-def analyze_log(path_to_file):
-    a = most_requested_dish_by_maria(path_to_file)
-    b = how_many_hamburgers_did_arnaldo_order(path_to_file)
-    c = how_many_dishes_did_joao_ever_order(path_to_file)
-    d = days_off_joao(path_to_file)
+def days_off_joao(path_to_file):
+    requests = importer_csv(path_to_file)
 
-    resposta = f'{a}\n{b}\n{c}\n{d}'
-    with open('data/mkt_campaign.txt', 'w') as f:
-        f.write(resposta)
+    days_joao = set()
+
+    for food in requests['joao']:
+        for days in requests['joao'][food]:
+            days_joao.add(days)
+
+    return all_days(requests) - days_joao
 
 
-if __name__ == '__main__':
-    print(analyze_log('data/orders_1.csv'))
+# def analyze_log(path_to_file):
+#     a = most_requested_dish_by_maria(path_to_file)
+#     b = how_many_hamburgers_did_arnaldo_order(path_to_file)
+#     c = how_many_dishes_did_joao_ever_order(path_to_file)
+#     d = days_off_joao(path_to_file)
+# 
+#     resposta = f'{a}\n{b}\n{c}\n{d}'
+#     with open('data/mkt_campaign.txt', 'w') as f:
+#         f.write(resposta)
+# 
+# 
+# if __name__ == '__main__':
+#     print(analyze_log('data/orders_1.csv'))
