@@ -22,21 +22,21 @@ def importer_csv(path_to_file):
         return requests
     except FileNotFoundError:
         raise FileNotFoundError(f"Arquivo inexistente: {path_to_file}")
-# 
-# 
-# 
-# def most_requested_dish_by_maria(path_to_file):
-#     requests = importer_csv(path_to_file)
-# 
-#     frequency = {}
-#     
-#     for i in requests['maria'].keys():
-#         for j in requests['maria'][i]:
-#             frequency[i] = requests['maria'][i][j]
-# 
-#     return max(frequency, key=frequency.get)
-# 
-# 
+
+
+
+def most_requested_dish_by_maria(path_to_file):
+    requests = importer_csv(path_to_file)
+
+    frequency = {}
+    
+    for i in requests['maria'].keys():
+        for j in requests['maria'][i]:
+            frequency[i] = requests['maria'][i][j]
+
+    return max(frequency, key=frequency.get)
+
+
 # def how_many_hamburgers_did_arnaldo_order(path_to_file):
 #     requests = importer_csv(path_to_file)
 # 
