@@ -13,17 +13,17 @@ class TrackOrders:
         else:
             self.days[day] += 1
 
-#    def get_most_ordered_dish_per_customer(self, customer):
-#        frequency = {}
-#
-#        for i in self.orders:
-#            if i[0] == customer:
-#                if i[1] not in frequency:
-#                    frequency[i[1]] = 1
-#                else:
-#                    frequency[i[1]] += 1
-#
-#        return max(frequency, key=frequency.get)
+    def get_most_ordered_dish_per_customer(self, customer):
+        frequency = {}
+
+        for i in self.orders:
+            if i[0] == customer:
+                if i[1] not in frequency:
+                    frequency[i[1]] = 1
+                else:
+                    frequency[i[1]] += 1
+
+        return max(frequency, key=frequency.get)
 
     def get_never_ordered_per_customer(self, customer):
         pass
