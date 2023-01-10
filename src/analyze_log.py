@@ -48,22 +48,22 @@ def how_many_hamburgers_did_arnaldo_order(path_to_file):
     return hamburgers
 
 
-# def how_many_dishes_did_joao_ever_order(path_to_file):
-#     requests = importer_csv(path_to_file)
-# 
-#     all_foods = set()
-#     foods_joao = set()
-# 
-#     for i in requests:
-#         for j in requests[i]:
-#             all_foods.add(j)
-# 
-#     for foods in requests['joao']:
-#         foods_joao.add(foods)
-# 
-#     return all_foods - foods_joao
-# 
-# 
+def how_many_dishes_did_joao_ever_order(path_to_file):
+    requests = importer_csv(path_to_file)
+
+    all_foods = set()
+    foods_joao = set()
+
+    for i in requests:
+        for j in requests[i]:
+            all_foods.add(j)
+
+    for foods in requests['joao']:
+        foods_joao.add(foods)
+
+    return all_foods - foods_joao
+
+
 # def days_off_joao(path_to_file):
 #     requests = importer_csv(path_to_file)
 # 
