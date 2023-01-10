@@ -48,7 +48,15 @@ class TrackOrders:
         return all_days - days_customer
 
     def get_busiest_day(self):
-        pass
+        frequency = {}
+
+        for i in self.orders:
+            if i[2] not in frequency:
+                frequency[i[2]] = 1
+            else:
+                frequency[i[2]] += 1
+
+        return max(frequency, key=frequency.get)
 
     def get_least_busy_day(self):
         pass
@@ -69,4 +77,4 @@ if __name__ == '__main__':
     track_orders = TrackOrders()
     for name, food, day in csv_parsed:
         track_orders.add_new_order(name, food, day)
-    print(track_orders.get_never_ordered_per_customer('maria'))
+    print(track_orders.get_busiest_day())
