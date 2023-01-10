@@ -37,17 +37,17 @@ def most_requested_dish_by_maria(path_to_file):
     return max(frequency, key=frequency.get)
 
 
-# def how_many_hamburgers_did_arnaldo_order(path_to_file):
-#     requests = importer_csv(path_to_file)
-# 
-#     hamburgers = 0
-# 
-#     for i in requests['arnaldo']['hamburguer']:
-#         hamburgers += requests['arnaldo']['hamburguer'][i]
-# 
-#     return hamburgers
-# 
-# 
+def how_many_hamburgers_did_arnaldo_order(path_to_file):
+    requests = importer_csv(path_to_file)
+
+    hamburgers = 0
+
+    for i in requests['arnaldo']['hamburguer']:
+        hamburgers += requests['arnaldo']['hamburguer'][i]
+
+    return hamburgers
+
+
 # def how_many_dishes_did_joao_ever_order(path_to_file):
 #     requests = importer_csv(path_to_file)
 # 
