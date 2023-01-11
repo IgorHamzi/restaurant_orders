@@ -1,17 +1,12 @@
 class TrackOrders:
     def __init__(self):
         self.orders = list()
-        self.days = dict()
 
     def __len__(self):
         return len(self.orders)
 
     def add_new_order(self, customer, order, day):
         self.orders.append((customer, order, day))
-        if day not in self.days:
-            self.days[day] = 1
-        else:
-            self.days[day] += 1
 
     def get_most_ordered_dish_per_customer(self, customer):
         frequency = {}
@@ -68,21 +63,3 @@ class TrackOrders:
                 frequency[i[2]] += 1
 
         return min(frequency, key=frequency.get)
-
-
-# if __name__ == '__main__':
-#     csv_parsed = [
-#     ["maria", "pizza", "terça-feira"],
-#     ["maria", "hamburguer", "terça-feira"],
-#     ["joao", "hamburguer", "terça-feira"],
-#     ["maria", "coxinha", "segunda-feira"],
-#     ["arnaldo", "misto-quente", "terça-feira"],
-#     ["jose", "hamburguer", "sabado"],
-#     ["maria", "hamburguer", "terça-feira"],
-#     ["maria", "hamburguer", "terça-feira"],
-#     ["joao", "hamburguer", "terça-feira"],
-# ]
-#     track_orders = TrackOrders()
-#     for name, food, day in csv_parsed:
-#         track_orders.add_new_order(name, food, day)
-#     print(track_orders.get_busiest_day())
